@@ -3,8 +3,9 @@ import { SocksProxyAgent } from "socks-proxy-agent";
 
 dotenv.config();
 
-export const NODE_ENV = process.env.NODE_ENV || "local";
-export const USE_PROXY = NODE_ENV === "local";
+// 是否启用代理：只在你明确声明时才启用
+export const USE_PROXY = process.env.USE_PROXY === "true";
+
 export const PROXY_URL = "socks5://127.0.0.1:10808";
 
 export const proxyAgent = USE_PROXY
